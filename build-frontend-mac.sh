@@ -9,3 +9,4 @@ npm run build
 cd ..
 
 cp -R ./frontend/build/* ./backend/src/main/resources/static
+
