@@ -36,6 +36,6 @@ public class ToDoService {
     }
 
 
-    public void deleteToDo(String id) {
+    public void deleteToDo(String id) {toDoRepository.deleteById(id);
     }
 }
