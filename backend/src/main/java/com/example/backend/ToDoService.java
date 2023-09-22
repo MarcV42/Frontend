@@ -22,4 +22,20 @@ public class ToDoService {
         ToDo toDo = new ToDo(UUID.randomUUID().toString(), newToDo.description(), newToDo.status());
         return  toDoRepository.save(toDo);
     }
+
+    //Wenn er eine ID findet gibt er sie weiter ans frontend (Controller)
+    // sonst ExceptionThrow
+    public ToDo getToDoBy(String id) {
+        return toDoRepository.findById(id).orElseThrow();
+    }
+
+    public ToDo updateToDo(String id, ToDo toDoToUpdate) {
+        System.out.println("You just updated a ToDO");
+        ToDo toDoToSave = new ToDo(id, toDoToUpdate.description(), toDoToUpdate.status());
+        return toDoRepository.save(toDoToSave);
+    }
+
+
+    public void deleteToDo(String id) {
+    }
 }

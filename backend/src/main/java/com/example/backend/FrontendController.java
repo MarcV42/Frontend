@@ -25,4 +25,20 @@ public class FrontendController {
         return toDoService.addToDo(newToDo);
     }
 
+
+    @GetMapping("/todo/{id}")
+    public ToDo getToDoByID(@PathVariable String id){
+        return toDoService.getToDoBy(id);
+    }
+
+    @PutMapping("/todo/{id}")
+    public ToDo putToDoByID(@PathVariable String id, @RequestBody ToDo toDo) {
+        return toDoService.updateToDo(id, toDo);
+    }
+
+    @DeleteMapping("/todo/{id}")
+    public void deleteToDoByID(@PathVariable String id) {
+        toDoService.deleteToDo(id);
+    }
+
 }
