@@ -15,7 +15,6 @@ public class FrontendController {
     private final ToDoService toDoService;
 
 
-
     @GetMapping("/todo")
     public List<ToDo> getAllToDo(){
         return toDoService.getToDoList();
